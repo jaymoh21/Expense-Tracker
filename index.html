@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Expense Tracker</h1>
+      <p>Manage your money wisely</p>
+    </header>
+    <main class="container">
+      <!--dashboard -->
+      <section class="dashboard">
+        <div class="card">
+          <h3>Total income</h3>
+          <p id="total-income">$0.00</p>
+        </div>
+        <div class="card">
+          <h3>Total expenses</h3>
+          <p id="total-expenses">$0.00</p>
+        </div>
+        <div class="card">
+          <h3>Remaining Balance</h3>
+          <p id="balance">$0.00</p>
+        </div>
+      </section>
+      <!--transaction form -->
+      <section class="form-section">
+        <h2>Add Transaction</h2>
+        <form id="transaction-form">
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <input
+              type="text"
+              id="description"
+              placeholder="e.g., shopping"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input
+              type="number"
+              id="amount"
+              placeholder="e.g., 25.00"
+              min="0.01"
+              step="0.01"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="type"> Transaction Type:</label>
+            <select id="type" required>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="category">Category:</label>
+            <select id="category" required>
+              <option value="food">Food</option>
+              <option value="transportation">Transportation</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="utilities">Utilities</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" required />
+          </div>
+          <button type="submit">Add Transaction</button>
+        </form>
+      </section>
+      <!--transaction history -->
+      <section class="history-section">
+        <h2>Transaction History</h2>
+        <div class="table-container">
+          <table id="transaction-table">
+            <thead>
+              <tr>
+                <th>Description</th>
+
+                <th>Category</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="transaction-list">
+              <!-- JavaScript add transactions here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Expense Tracker. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
